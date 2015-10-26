@@ -15,6 +15,18 @@ Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
 */
+
+/* here are the sources that helped me with the project in addition to Udacity course videos and Github Poject examples
+
+
+http://deanhume.com/home/blogpost/web-page-performance---profiling-paint-times/91
+https://www.youtube.com/watch?v=LzELw8k1FEY
+http://www.html5rocks.com/en/tutorials/speed/layers/
+http://wilsonpage.co.uk/preventing-layout-thrashing/
+http://www.html5rocks.com/en/tutorials/speed/animations/
+
+*/
+
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
@@ -477,7 +489,7 @@ var frame = 0;
 
 // Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
 
-function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
+function logAverageFrame(times) {// times is the array of User Timing measurements from updatePositions()
   var numberOfEntries = times.length;
   var sum = 0;
   for (var i = numberOfEntries - 1; i > numberOfEntries - 11; i--) {
@@ -490,7 +502,6 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
-// http://www.html5rocks.com/en/tutorials/speed/animations/
 // this code elimintates forsed assyncronous layout
 var lastScrollPositionY = 0; // declared this variable outside of function because its used in another function
 var animation = true;
@@ -523,11 +534,6 @@ function updatePositions() {
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
-
-//http://deanhume.com/home/blogpost/web-page-performance---profiling-paint-times/91
-//https://www.youtube.com/watch?v=LzELw8k1FEY
-//http://www.html5rocks.com/en/tutorials/speed/layers/
-//http://wilsonpage.co.uk/preventing-layout-thrashing/
 
 
   // User Timing API to the rescue again. Seriously, it's worth learning.

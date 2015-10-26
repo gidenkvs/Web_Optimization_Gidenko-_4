@@ -28,7 +28,7 @@ form {
 #pizzaSize {
   font-weight: 800;
 }
-
+ /* added additional functionality to indicate during runtime that folowing class will-change*/
 .mover {
   position: fixed;
   z-index: -1;
