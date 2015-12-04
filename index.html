@@ -7,11 +7,29 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+    <!-- Hmm, what is the impact of web fonts on speed? Measure it... 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet">
+    
+    <link href="css/print.css" rel="stylesheet" >
+    -->
+    <style>
+      @media print {
+        * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+        a, a:visited { color: #444 !important; text-decoration: underline; }
+        a[href]:after { content: " (" attr(href) ")"; }
+        tr, img { page-break-inside: avoid; }
+        img { max-width: 100% !important; }
+        @page { margin: 0.5cm; }
+        p, h2, h3 { orphans: 3; widows: 3; }
+        h2, h3{ page-break-after: avoid; }
+      }
+
+    </style>
+
+  
+<link href="css/style.css" rel="stylesheet">
+
 
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
@@ -21,7 +39,7 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
-    <script src="http://www.google-analytics.com/analytics.js"></script>
+    <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
   </head>
 
@@ -30,7 +48,6 @@
       <a href="/"><img src="img/profilepic.jpg"></a>
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
-
     <div class="container">
       <div class="hero">
         <strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
@@ -57,7 +74,11 @@
           </li>
 
           <li>
+            <!-- 
             <img style="width: 100px;" src="views/images/pizzeria.jpg">
+             replaced pizzeria.jpg with pizzeria_mini.jpg and placed it in the new images_min folder to increase speed on webpage. used
+             http://www.jpegmini.com/main/shrink_photo website to shrink image.  change made 12/3/2015 slavikGidenko-->
+            <img style="width: 100px;" src="views/images_min/pizzeria_mini.jpg" > 
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>

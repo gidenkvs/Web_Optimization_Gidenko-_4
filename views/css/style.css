@@ -31,6 +31,8 @@ form {
   z-index: -1;
   will-change: transform;
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
 }
 .randomPizzaContainer {
   float: left;
@@ -45,4 +47,10 @@ form {
 
  .container {
   background-color: rgba(240, 60, 60, 0.8);
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 480px) {
+  body { font-size: 12px;}
+  header p { padding-left: 4.5em;}
 }
