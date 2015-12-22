@@ -76,17 +76,40 @@ Feeling uninspired by the portfolio? Here's a list of cool portfolios I found af
 Changes made to the project in order to increase speed, performance and user interaction:
 
 Modifications to Web_Optimization_Gidenko-_4 Img and views images folders: 
-	In order to improve speed index score I downloaded gulp and optimized images using gulp task manager.
+	1. In order to improve speed index score I downloaded gulp and optimized images using gulp task manager.
 
 Modification to Index.html to get PageSpeed Insights performance improvement:
-	Disabled links and inlined code from style.css and print.css.
-	Disabled font imports.
-	Compressed and images by using ImageOptim and 'gulp-responsive-images'
-	Copied and commpressed image 'pizzeria.jpeg' and moved it to img.
+	1. Disabled links and inlined code from style.css and print.css.
+	2. Disabled font imports.
+	3. Compressed and images by using ImageOptim and 'gulp-responsive-images'
+	4. Copied and commpressed image 'pizzeria.jpeg' and moved it to img.
 	picture is sized to 100px.
 
 Modification to Pizza.html to improvement frame rate and resizing:
+	1. Optimized imaage for faster upload: significant increase in image loadingtime.
+
 Modification to Style.css to improvement frame rate and resizing:
+	1. .mover class modified to include 'will-change: transform' and 'transform: translateZ(0)' and 'backface-visibility: hidden' and browser specific   '-webkit-transform: translateZ(0);''
+  -moz-transform: translateZ(0);'. using these hardware accelerated css properties will provide preformance increase in various types of browsers and devices.
+
+
 Modification to Main.js to improvement frame rate and resizing:
-	Based on a reviewers recomendation i included 'use strict'; inside functions in main.js file
+	1. Based on a reviewers recomendation i included 'use strict'; inside functions in main.js file.
+	2. Optimized for loops by declaring variables outside the for loop in instances where call to the DOM is required in order to reduce Jank.
+	3. To avoid syncronous layout of moving pizzas, I used Ilyas' Demo found https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html. this moves the sliding background based on scroll position.
+	4. decreased the amount of pizzas to be uploaded to the screen.
+
+Gulp Task Runner was used in experimenting with minification, concatenation, and uglifying. I did not include compact code since i am not experienced it in it enough, but i am realizing great benefit and accelerated production of code by it once i get handle for it.
+
+here are the sources that helped me with the project in addition to Udacity course videos and Github Poject examples
+
+
+http://deanhume.com/home/blogpost/web-page-performance---profiling-paint-times/91
+https://www.youtube.com/watch?v=LzELw8k1FEY
+http://www.html5rocks.com/en/tutorials/speed/layers/
+http://wilsonpage.co.uk/preventing-layout-thrashing/
+http://www.html5rocks.com/en/tutorials/speed/animations/
+
+http://gulpjs.com/plugins/
+https://css-tricks.com/almanac/properties/b/backface-visibility/
 
