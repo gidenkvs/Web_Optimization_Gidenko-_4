@@ -71,3 +71,22 @@ Feeling uninspired by the portfolio? Here's a list of cool portfolios I found af
 * <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
 * <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
 * <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+
+**** VSG NOTES ****
+Changes made to the project in order to increase speed, performance and user interaction:
+
+Modifications to Web_Optimization_Gidenko-_4 Img and views images folders: 
+	In order to improve speed index score I downloaded gulp and optimized images using gulp task manager.
+
+Modification to Index.html to get PageSpeed Insights performance improvement:
+	Disabled links and inlined code from style.css and print.css.
+	Disabled font imports.
+	Compressed and images by using ImageOptim and 'gulp-responsive-images'
+	Copied and commpressed image 'pizzeria.jpeg' and moved it to img.
+	picture is sized to 100px.
+
+Modification to Pizza.html to improvement frame rate and resizing:
+Modification to Style.css to improvement frame rate and resizing:
+Modification to Main.js to improvement frame rate and resizing:
+	Based on a reviewers recomendation i included 'use strict'; inside functions in main.js file
+

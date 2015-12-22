@@ -25,6 +25,7 @@ http://www.html5rocks.com/en/tutorials/speed/layers/
 http://wilsonpage.co.uk/preventing-layout-thrashing/
 http://www.html5rocks.com/en/tutorials/speed/animations/
 
+--- added 'use strict in some areas' review if needed 12-18-2015
 */
 
 // As you may have realized, this website randomly generates pizzas.
@@ -156,6 +157,7 @@ pizzaIngredients.crusts = [
 // Name generator pulled from http://saturdaykid.com/usernames/generator.html
 // Capitalizes first letter of each word
 String.prototype.capitalize = function() {
+  'use strict';
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
@@ -298,6 +300,7 @@ var nouns = ["animals", "everyday", "fantasy", "gross", "horror", "jewelry", "pl
 
 // Generates random numbers for getAdj and getNoun functions and returns a new pizza name
 function generator(adj, noun) {
+  'use strict';  
   var adjectives = getAdj(adj);
   var nouns = getNoun(noun);
   var randomAdjective = parseInt(Math.random() * adjectives.length);
@@ -308,6 +311,7 @@ function generator(adj, noun) {
 
 // Chooses random adjective and random noun
 function randomName() {
+  'use strict';
   var randomNumberAdj = parseInt(Math.random() * adjectives.length);
   var randomNumberNoun = parseInt(Math.random() * nouns.length);
   return generator(adjectives[randomNumberAdj], nouns[randomNumberNoun]);
@@ -409,7 +413,7 @@ var pizzaElementGenerator = function(i) {
   return pizzaContainer;
 };
 
-"use strict";
+// "use strict";
 
 // resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
 var resizePizzas = function(size) { 
@@ -418,6 +422,7 @@ var resizePizzas = function(size) {
 
   // Changes the value for the size of the pizza above the slider
   function changeSliderLabel(size) { 
+    'use strict';
     var randomPizzasSize = document.getElementById("pizzaSize");
     var newSize;
     switch(size) {
@@ -440,6 +445,7 @@ var resizePizzas = function(size) {
 
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function changePizzaSizes(size) {
+    'use strict';
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
     var newWidth;
     switch(size){
@@ -492,6 +498,7 @@ var frame = 0;
 // Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
 
 function logAverageFrame(times) {// times is the array of User Timing measurements from updatePositions()
+  'use strict';
   var numberOfEntries = times.length;
   var sum = 0;
   for (var i = numberOfEntries - 1; i > numberOfEntries - 11; i--) {
@@ -508,12 +515,14 @@ function logAverageFrame(times) {// times is the array of User Timing measuremen
 var lastScrollPositionY = 0; // declared this variable outside of function because its used in another function
 var animation = true;
 
-function onScroll() {
+function onScroll() {  
+  'use strict';
   lastScrollPositionY = window.scrollY;
   checkFlag();
 }
     
 function checkFlag() {
+   'use strict';
   if (!animation) {
     requestAnimationFrame(updatePositions);
   }
@@ -522,6 +531,7 @@ function checkFlag() {
 
 
 function updatePositions() {
+  'use strict';
   animation = false;
   frame++;
   window.performance.mark("mark_start_frame");
@@ -554,6 +564,7 @@ window.addEventListener('scroll', onScroll);
 // Generates the sliding pizzas when the page loads.
 
 document.addEventListener('DOMContentLoaded', function() {
+  'use strict';
   var windowHeight = window.screen.height;
   var rows = windowHeight / 230; // covers the window with plenty of pizzas
   var cols = 8;

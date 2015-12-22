@@ -25,10 +25,13 @@ form {
 #pizzaSize {
   font-weight: 800;
 }
- /* added additional functionality to indicate during runtime that folowing class will-change*/
+ /* added additional functionality to indicate during runtime that folowing class will-change
+https://css-tricks.com/almanac/properties/b/backface-visibility/
+ */
 .mover {
   position: fixed;
   z-index: -1;
+  backface-visibility: hidden;
   will-change: transform;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
